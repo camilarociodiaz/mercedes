@@ -15,15 +15,6 @@ function App() {
       {/* NUESTRA SECCIÓN ANIMADA HORIZONTAL */}
       <GLAHorizontalCarousel />
 
-      {/* Sección de Cierre / Características */}
-      <section className="w-full h-screen flex items-center justify-center bg-white p-6">
-        <div className="max-w-4xl text-center">
-          <h3 className="text-3xl md:text-5xl font-light mb-6">Detalles que marcan la diferencia.</h3>
-          <p className="text-zinc-500 font-light max-w-2xl mx-auto">
-            Cada línea de la carrocería del GLA ha sido optimizada aerodinámicamente. Al interactuar mediante el scroll, se puede apreciar la fluidez de su silueta coupé.
-          </p>
-        </div>
-      </section>
     </div>
   );
 }
