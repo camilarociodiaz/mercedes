@@ -374,8 +374,19 @@ const GLAHorizontalCarousel = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#07080a]">
       <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/images/fondo-scroll.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          opacity: 1,
+        }}
+      />
+
+      <div
         ref={scrollRef}
-        className="h-full w-full overflow-x-auto overflow-y-hidden touch-pan-x"
+        className="relative h-full w-full overflow-x-auto overflow-y-hidden touch-pan-x z-10"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         <div className="flex h-full items-center gap-[2.8vw] px-[7vw] py-3 md:gap-[1.1vw] md:px-[12vw]">
@@ -391,11 +402,17 @@ const GLAHorizontalCarousel = () => {
                 ref={(el) => {
                   textRefs.current[idx] = el;
                 }}
-                className="pointer-events-none absolute left-3 top-1 z-20 max-w-xs md:left-8 md:top-3 md:max-w-sm"
+                className="pointer-events-none absolute left-6 top-8 z-20 md:left-16 md:top-12 max-w-xs md:max-w-sm"
               >
-                <p className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-zinc-500">{slot.badge}</p>
-                <h2 className="mt-3 text-2xl md:text-5xl font-light tracking-tight text-white">{slot.title}</h2>
-                <p className="mt-4 text-sm md:text-base leading-relaxed text-zinc-400">{slot.description}</p>
+                <p className="text-[10px] md:text-xs uppercase tracking-[0.35em] text-[#080C0F] font-semibold">Mercedes-Benz</p>
+                <h2 className="mt-3 text-4xl md:text-7xl font-light tracking-tight text-[#080C0F] leading-none">{slot.title.split(' ').pop()}</h2>
+               <div className="mt-6 py-2 px-4 bg-white w-fit rounded-full">
+                <p className=" text-[9px] md:text-xs uppercase tracking-[0.3em] text-[#080C0F]">Ver más</p>
+                 </div>
+              </div>
+
+              <div className="pointer-events-none absolute bottom-10 left-4 right-4 z-20 md:bottom-16 md:left-12 md:right-12">
+                {/* <p className="text-xs md:text-sm leading-relaxed text-zinc-300 max-w-2xl">{slot.description}</p> */}
               </div>
 
               <div className="relative flex h-full items-center justify-center">
